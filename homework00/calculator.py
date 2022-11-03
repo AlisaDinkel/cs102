@@ -71,7 +71,6 @@ while True:
             else:
                 print("Can't divide by 0. Try again.")
                 continue
-
         if command == "^":
             print(f"{x} ^ {y} = {calc(command, x, y)}")
 
