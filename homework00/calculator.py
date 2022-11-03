@@ -46,16 +46,19 @@ while True:
 
     if command in ("+", "-", "*", "/", "^"):
 
-        x = input("Enter first number: ")
-        while x.isalpha():
-            print("Invalid number")
-            x = input("Enter first number: ")
-        y = input("Enter second number: ")
-        while y.isalpha():
-            print("Invalid number")
-            y = input("Enter second number: ")
-        x = float(x)
-        y = float(y)
+        while True:
+            try:
+                x = float(input("Please enter first number: "))
+                break
+            except ValueError:
+                print("Oops!  That was no valid number.  Try again...")
+
+        while True:
+            try:
+                y = float(input("Please enter second number: "))
+                break
+            except ValueError:
+                print("Oops!  That was no valid number.  Try again...")
         if command == "+":
             print(f"{x} + {y} = {calc(command, x, y)}")
         if command == "-":
@@ -68,16 +71,17 @@ while True:
             else:
                 print("Can't divide by 0. Try again.")
                 continue
-        if command == "^":
+
+    if command == "^":
             print(f"{x} ^ {y} = {calc(command, x, y)}")
 
     elif command in ("^2", "ln", "lg"):
-
-        x = input("Enter first number: ")
-        while not x.isdigit():
-            print("Invalid number")
-            x = input("Enter first number: ")
-        x = float(x)
+        while True:
+            try:
+                x = float(input("Please enter first number: "))
+                break
+            except ValueError:
+                print("Oops!  That was no valid number.  Try again...")
 
         if command == "^2":
             print(f"{x} ^ 2 = {calc(command, x)}")
@@ -88,11 +92,12 @@ while True:
 
     elif command in ("sin", "cos", "tan"):
 
-        x = input("Enter angle in rad: ")
-        while not x.isdigit():
-            print("Invalid number")
-            x = input("Enter angle in rad: ")
-        x = float(x)
+        while True:
+            try:
+                x = float(input("Please enter first number: "))
+                break
+            except ValueError:
+                print("Oops!  That was no valid number.  Try again...")
 
         if command == "sin":
             print(f"sin{x} = {calc(command, x)}")
@@ -103,16 +108,19 @@ while True:
 
     elif command == "numeral system":
 
-        x = input("Enter first number: ")
-        while not x.isdigit():
-            print("Invalid number")
-            x = input("Enter first number: ")
-        x = int(x)
-        base = input("Base (2-9): ")
-        while not base.isdigit():
-            print("Invalid base")
-            base = input("Base (2-9): ")
-        base = int(base)
+        while True:
+            try:
+                x = int(input("Please enter first number: "))
+                break
+            except ValueError:
+                print("Oops!  That was no valid number.  Try again...")
+        
+        while True:
+            try:
+                base = int(input("Please enter base number: "))
+                break
+            except ValueError:
+                print("Oops!  That was no valid number.  Try again...")
         print("Result ", num_system(x, base))
 
     else:
