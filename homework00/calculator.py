@@ -73,7 +73,7 @@ while True:
                 continue
 
     if command == "^":
-            print(f"{x} ^ {y} = {calc(command, x, y)}")
+        print(f"{x} ^ {y} = {calc(command, x, y)}")
 
     elif command in ("^2", "ln", "lg"):
         while True:
@@ -114,7 +114,7 @@ while True:
                 break
             except ValueError:
                 print("Oops!  That was no valid number.  Try again...")
-        
+
         while True:
             try:
                 base = int(input("Please enter base number: "))
