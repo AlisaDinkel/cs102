@@ -47,11 +47,11 @@ while True:
     if command in ("+", "-", "*", "/", "^"):
 
         x = input("Enter first number: ")
-        while not x.isdigit():
+        while x.isalpha():
             print("Invalid number")
             x = input("Enter first number: ")
         y = input("Enter second number: ")
-        while not y.isdigit():
+        while y.isalpha():
             print("Invalid number")
             y = input("Enter second number: ")
         x = float(x)
