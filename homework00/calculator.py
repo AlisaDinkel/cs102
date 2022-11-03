@@ -1,6 +1,6 @@
 """Calculator"""
 
-from math import cos, log, sin, tan
+from math import *
 
 
 def calc(command_calc, x_calc, y_calc=0):
