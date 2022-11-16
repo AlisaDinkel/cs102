@@ -20,15 +20,15 @@ def calc(command_calc, x_calc, y_calc=0):
         return x_calc**y_calc
     if command_calc == "^2":
         return x_calc**2
-    if command_calc in ('ln', 'n'):
+    if command_calc in ("ln", "n"):
         return log(x_calc)
-    if command_calc in ('lg', 'l'):
+    if command_calc in ("lg", "l"):
         return log(x_calc, 10)
-    if command_calc in ('sin', 's'):
+    if command_calc in ("sin", "s"):
         return sin(x_calc)
-    if command_calc in ('cos', 'c'):
+    if command_calc in ("cos", "c"):
         return cos(x_calc)
-    if command_calc in ('tg', 't'):
+    if command_calc in ("tg", "t"):
         return tan(x_calc)
 
 
@@ -42,6 +42,7 @@ def num_system(num, base_num_system):
         num = num // base_num_system
     return res if res != "" else 0
 
+
 def is_float(num):
     """Проверка, что число вещественное"""
     try:
@@ -49,6 +50,7 @@ def is_float(num):
     except ValueError:
         return False
     return True
+
 
 def brackets_are_ok(string_eq):
     """Проверка, корректно ли стоят скобки в выражении"""
@@ -66,7 +68,7 @@ def brackets_are_ok(string_eq):
     return ok_flag
 
 
-def get_string_eq(given = None):
+def get_string_eq(given=None):
     """Получение выражения со скобочками или без"""
     string_eq = input("Введите выражение > ") if given is None else given
     if brackets_are_ok(string_eq):
@@ -105,7 +107,6 @@ def solve(string_eq: str):
         if string_eq[0] == "(" and string_eq[-1] == ")":
             return solve(string_eq[1:-1])
         return string_eq
-    
     inner_1 = solve(string_eq[:found_outside_brackets])
     inner_2 = solve(string_eq[found_outside_brackets + 1 :])
     operand = string_eq[found_outside_brackets]
@@ -184,7 +185,6 @@ while True:
                 except ValueError:
                     print("Некорректное число. Попробуйте заново.")
 
-
     elif command in ("sin", "cos", "tg"):
 
         while True:
@@ -198,7 +198,7 @@ while True:
             print(f"sin{x} = {calc(command, x)}")
         if command == "cos":
             print(f"cos{x} = {calc(command, x)}")
-        if command == "tan":
+        if command == "tg":
             print(f"tg{x} = {calc(command, x)}")
 
     elif command == "numeral system":
