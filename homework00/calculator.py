@@ -108,7 +108,7 @@ def solve(string_eq: str):
             return solve(string_eq[1:-1])
         return string_eq
     inner_1 = solve(string_eq[:found_outside_brackets])
-    inner_2 = solve(string_eq[found_outside_brackets + 1:])
+    inner_2 = solve(string_eq[found_outside_brackets + 1: ])
     operand = string_eq[found_outside_brackets]
 
     if inner_1 == "" and is_float(inner_2):
