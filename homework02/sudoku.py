@@ -163,7 +163,7 @@ def check_solution(solution: tp.List[tp.List[str]]) -> bool:
     for row in range(0, len(solution), 3):
         for col in range(0, len(solution), 3):
             pos_block = row, col
-            if set(get_col(solution, pos_block)) != set("123456789"):
+            if set(get_block(solution, pos_block)) != set("123456789"):
                 return False
     return True
 
